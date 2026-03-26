@@ -8,9 +8,9 @@
     </head>
     <body>
         <div class="root">
-            <header class="header">
+            <header class="header" id="header">
                 <div class="header__title">
-                    История советской и российской вычислительной техники
+                    <div>История советской и российской вычислительной техники</div>
                 </div>
                 <nav class="header__links">
                     <div class="links__card">
@@ -20,16 +20,34 @@
                         <a href="/frontend/pages/general.html" class="header__link general">Общая история</a>
                     </div>
                     <div class="links__card">
-                        <a href="/frontend/pages/inventions.html" class="header__link inventions">Достижения российских учёных</a>
+                        <a href="/frontend/pages/inventions.html" class="header__link inventions">Главные достижения</a>
                     </div>
                 </nav>
             </header>
-            <main class="main">
-
+            <main class="main" id="main">
+                <div class="bulb_decoration"></div>
             </main>
             <footer class="footer">
-
+                <div class="credits">
+                    <div class="credits__info">
+                        Мини-проект по дисциплине<br>
+                        "История российской науки и техники"
+                        <div class="source__wrapper">
+                            <a href="https://github.com/marlef03/russian_computer_history" target="_blank" class="credits__source">Исходный код проекта</a>
+                        </div>
+                    </div>
+                    <div class="credits__authors">
+                        Работу выполнили:
+                        <div class="authors__1">
+                            Труханов Марк (frontend)
+                        </div>
+                        <div class="authors__2">
+                            Понкратов Игнат (backend, сбор информации)
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
+        <script src="/frontend/scripts/util.js"></script>
     </body>
 </html>
