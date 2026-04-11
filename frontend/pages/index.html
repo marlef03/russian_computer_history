@@ -4,29 +4,95 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>История советской и российской вычислительной техники</title>
+        <link rel="icon" type="image/png" href="/frontend/images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/frontend/images/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/frontend/images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/frontend/images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/frontend/images/favicon/site.webmanifest">
         <link rel="stylesheet" href="/frontend/styles/style.css">
     </head>
     <body>
         <div class="root">
-            <header class="header" id="header">
-                <div class="header__title">
-                    <div>История советской и российской вычислительной техники</div>
-                </div>
+            <header class="header">
+                <a href="/frontend/pages/index.html" class="header__title">
+                    <div class="header__logo"></div>
+                    <div class="title__text">История советской и российской вычислительной техники</div>
+                </a>
                 <nav class="header__links">
-                    <div class="links__card">
-                        <a href="/frontend/pages/scientists.html" class="header__link scientists">Значимые личности</a>
-                    </div>
-                    <div class="links__card">
-                        <a href="/frontend/pages/general.html" class="header__link general">Общая история</a>
-                    </div>
-                    <div class="links__card">
-                        <a href="/frontend/pages/inventions.html" class="header__link inventions">Главные достижения</a>
-                    </div>
+                    <a href="/frontend/pages/scientists.html" class="links__card">
+                        <div class="link__icon scientists"></div>
+                        <div class="link__text">Значимые личности</div>
+                    </a>
+                    <a href="/frontend/pages/general.html" class="links__card">
+                        <div class="link__icon general"></div>
+                        <div class="link__text">Общая история</div>
+                    </a>
+                    <a href="/frontend/pages/inventions.html" class="links__card">
+                        <div class="link__icon inventions"></div>
+                        <div class="link__text">Главные достижения</div>
+                    </a>
                 </nav>
             </header>
-            <main class="main" id="main">
-                <div class="bulb_decoration"></div>
-            </main>
+            <div class="main">
+                <div class="decoration round-bulb left"></div>
+                <div class="decoration rect-bulb right"></div>
+                <main>
+                    <section class="main__welcome">
+                        <img class="image" src="/frontend/images/landing/general.webp" alt="ЭВМ «ЛИТМО-1»" title="ЭВМ «ЛИТМО-1» — одна из первых советских ламповых электронно-вычислительных машин, созданная в 1956-1958 годах на кафедре счётно-решающих приборов Ленинградского института точной механики и оптики (ЛИТМО, ныне Университет ИТМО)">
+                        <div class="welcome__title">Добро пожаловать на сайт, посвящённый истории советской и российской вычислительной техники!</div>
+                    </section>
+                    <section class="main__options">
+                        <div class="options__title">На нашем сайте вы можете...</div>
+                        <div class="options__list">
+                            <div class="option__card">
+                                <div class="option__title">...изучить всю историю советской и российской вычислительной техники в хронологическом порядке</div>
+                                <div class="option__general-scheme">
+                                    <div class="general-scheme__block">
+                                        <div class="general-scheme__icon general-scheme__icon1"></div>
+                                        <div class="general-scheme__to1"></div>
+                                        <div class="general-scheme__icon general-scheme__icon2"></div>
+                                    </div>
+                                    <div class="general-scheme__block">
+                                        <div class="general-scheme__to2"></div>
+                                    </div>
+                                    <div class="general-scheme__block">
+                                        <div class="general-scheme__icon general-scheme__icon4"></div>
+                                        <div class="general-scheme__to3"></div>
+                                        <div class="general-scheme__icon general-scheme__icon3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option__card">
+                                <div class="option__title">...узнать, какие личности внесли вклад в развитие отечественной вычислительной техники</div>
+                            </div>
+                            <div class="option__card">
+                                <div class="option__title">...ознакомиться с главными техническими достижениями советских и российских учёных</div>
+                            </div>
+                            <div class="option__card">
+                                <div class="option__title">...узнать, какое значимое событие в истории развития отечественной вычислительной техники произошло сегодня</div>
+                            </div>
+                            <div class="option__card">
+                                <div class="option__title">...пройти тестирование по материалам, представленным на сайте</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="main__general" id="general">
+                        
+                    </section>
+                    <section class="main__inventions" id="inventions">
+
+                    </section>
+                    <section class="main__scientists" id="scientists">
+
+                    </section>
+                    <section class="main__date">
+
+                    </section>
+                    <section class="main__tests">
+
+                    </section>
+                </main>
+            </div>
             <footer class="footer">
                 <div class="credits">
                     <div class="credits__info">
@@ -48,6 +114,6 @@
                 </div>
             </footer>
         </div>
-        <script src="/frontend/scripts/util.js"></script>
+        <!-- <script src="/frontend/scripts/util.js"></script> -->
     </body>
 </html>
