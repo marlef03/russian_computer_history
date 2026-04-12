@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Caveat';
+  src: url('/frontend/fonts/Caveat-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
     --title-normal: #FFFA;
     --title-flicker: #FFF7;
@@ -17,6 +24,7 @@
 }
 
 body {
+    scroll-behavior: smooth;
     background-color: var(--main-color);
     margin: 0px;
     color: white;
@@ -27,6 +35,56 @@ body {
 a {
     text-decoration: none;
     color: white;
+}
+
+#goup {
+    visibility: hidden;
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--section-border-color);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#goup.show {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+#goup:hover {
+    scale: 1.07;
+    transition: 0.3s;
+}
+
+#goup::before {
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: white;
+    top: 12px;
+    left: 18.5px;
+    rotate: 45deg;
+}
+
+#goup::after {
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: white;
+    top: 12px;
+    right: 18.5px;
+    rotate: -45deg;
 }
 
 .header {
@@ -225,7 +283,7 @@ section {
 .options__title {
     font-size: 2.6em;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .options__list {
@@ -235,9 +293,17 @@ section {
     gap: 10px;
 }
 
+.option__title {
+    line-height: 1.5em;
+}
+
 .option__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
     width: 540px;
+    height: 400px;
     padding: 10px;
     background-color: var(--option-color);
     border: 1px solid var(--section-border-color);
@@ -318,9 +384,214 @@ section {
     background-image: url('/frontend/images/decorations/general_scheme/icon4.svg');
 }
 
+.option__scientists-scheme {
+    position: relative;
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+.scientists-scheme__icon {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.scientists-scheme__icon1 {
+    background-image: url('/frontend/images/decorations/scientists_scheme/icon1.svg');
+    top: calc(100% - 100px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    animation: scientists 5s infinite;
+}
+
+.scientists-scheme__icon2 {
+    background-image: url('/frontend/images/decorations/scientists_scheme/icon1.svg');
+    top: calc(50% - 40px);
+    left: calc(100% - 80px);
+    width: 80px;
+    height: 80px;
+    animation: scientists 5s -1.25s infinite;
+}
+
+.scientists-scheme__icon3 {
+    background-image: url('/frontend/images/decorations/scientists_scheme/icon1.svg');
+    top: 0;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    animation: scientists 5s -2.5s infinite;
+}
+
+.scientists-scheme__icon4 {
+    background-image: url('/frontend/images/decorations/scientists_scheme/icon1.svg');
+    top: calc(50% - 40px);
+    left: 0;
+    width: 80px;
+    height: 80px;
+    animation: scientists 5s -3.75s infinite;
+}
+
+@keyframes scientists {
+    0% {
+        top: calc(100% - 100px);
+        left: calc(50% - 50px);
+        width: 100px;
+        height: 100px;
+    }
+    25% {
+        top: calc(50% - 40px);
+        left: calc(100% - 80px);
+        width: 80px;
+        height: 80px;
+    }
+    50% {
+        top: 0;
+        left: calc(50% - 30px);
+        width: 60px;
+        height: 60px;
+    }
+    75% {
+        top: calc(50% - 40px);
+        left: 0;
+        width: 80px;
+        height: 80px;
+    }
+    100% {
+        top: calc(100% - 100px);
+        left: calc(50% - 50px);
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.option__inventions-scheme {
+    overflow-x: hidden;
+    position: relative;
+    height: 300px;
+}
+
+.inventions-scheme__frame {
+    height: 100%;
+    animation: inventions-frame 1s steps(1) infinite;
+}
+
+:nth-child(odd) > .inventions-scheme__frame {
+    animation-delay: -0.3333s;
+}
+
+@keyframes inventions-frame {
+    0% {
+        background-image: url('/frontend/images/decorations/inventions_scheme/frame2.svg');
+    }
+    33.3333% {
+        background-image: url('/frontend/images/decorations/inventions_scheme/frame1.svg');
+    }
+    66.6666% {
+        background-image: url('/frontend/images/decorations/inventions_scheme/frame3.svg');
+    }
+    100% {
+        background-image: url('/frontend/images/decorations/inventions_scheme/frame2.svg');
+    }
+}
+
+.inventions-scheme__container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    animation: inventions-movement 10s linear infinite;
+}
+
+@keyframes inventions-movement {
+    from {
+        left: 0;
+    }
+    to {
+        left: -1200px;
+    }
+}
+
+.inventions-scheme__icon {
+    width: 300px;
+    height: 300px;
+    flex: 0 0 300px;
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position: 50%;
+}
+
+.inventions-scheme__icon1 {
+    background-image: url('/frontend/images/inventions/11.jpg');
+}
+
+.inventions-scheme__icon2 {
+    background-image: url('/frontend/images/inventions/12.jpg');
+}
+
+.inventions-scheme__icon3 {
+    background-image: url('/frontend/images/inventions/8.jpg');
+}
+
+.inventions-scheme__icon4 {
+    background-image: url('/frontend/images/inventions/13.jpg');
+}
+
+.option__date-scheme {
+    display: flex;
+    align-items: start;
+}
+
+.date-scheme__calendar {
+    position: relative;
+    width: 260px;
+    height: 300px;
+    background-image: url('/frontend/images/decorations/date_scheme/calendar.svg');
+}
+
+.date-scheme__number {
+    position: absolute;
+    top: 100px;
+    left: 59px;
+    font-family: 'Caveat', sans-serif;
+    font-size: 96px;
+    rotate: -12deg;
+}
+
+.date-scheme__month {
+    position: absolute;
+    top: 186px;
+    left: 86px;
+    font-family: 'Caveat', sans-serif;
+    font-size: 36px;
+    rotate: -11deg;
+}
+
+.date-scheme__question {
+    width: 200px;
+    height: 180px;
+    animation: question-flicker 1s steps(1) infinite;
+}
+
+@keyframes question-flicker {
+    0% {
+        background-image: url('/frontend/images/decorations/date_scheme/question1.svg');
+    }
+    33.3333% {
+        background-image: url('/frontend/images/decorations/date_scheme/question2.svg');
+    }
+    66.6666% {
+        background-image: url('/frontend/images/decorations/date_scheme/question3.svg');
+    }
+    100% {
+        background-image: url('/frontend/images/decorations/date_scheme/question1.svg');
+    }
+}
+
 .footer {
     border-top: 1px white solid;
     padding: 20px;
+    height: 100%;
 }
 
 .credits {

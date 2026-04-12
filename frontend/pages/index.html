@@ -34,8 +34,6 @@
                 </nav>
             </header>
             <div class="main">
-                <div class="decoration round-bulb left"></div>
-                <div class="decoration rect-bulb right"></div>
                 <main>
                     <section class="main__welcome">
                         <img class="image" src="/frontend/images/landing/general.webp" alt="ЭВМ «ЛИТМО-1»" title="ЭВМ «ЛИТМО-1» — одна из первых советских ламповых электронно-вычислительных машин, созданная в 1956-1958 годах на кафедре счётно-решающих приборов Ленинградского института точной механики и оптики (ЛИТМО, ныне Университет ИТМО)">
@@ -64,35 +62,56 @@
                             </div>
                             <div class="option__card">
                                 <div class="option__title">...узнать, какие личности внесли вклад в развитие отечественной вычислительной техники</div>
+                                <div class="option__scientists-scheme">
+                                    <div class="scientists-scheme__icon scientists-scheme__icon1"></div>
+                                    <div class="scientists-scheme__icon scientists-scheme__icon2"></div>
+                                    <div class="scientists-scheme__icon scientists-scheme__icon3"></div>
+                                    <div class="scientists-scheme__icon scientists-scheme__icon4"></div>
+                                </div>
                             </div>
                             <div class="option__card">
                                 <div class="option__title">...ознакомиться с главными техническими достижениями советских и российских учёных</div>
+                                <div class="option__inventions-scheme">
+                                    <div class="inventions-scheme__container">
+                                        <div class="inventions-scheme__icon inventions-scheme__icon1">
+                                            <div class="inventions-scheme__frame"></div>
+                                        </div>
+                                        <div class="inventions-scheme__icon inventions-scheme__icon2">
+                                            <div class="inventions-scheme__frame"></div>
+                                        </div>
+                                        <div class="inventions-scheme__icon inventions-scheme__icon3">
+                                            <div class="inventions-scheme__frame"></div>
+                                        </div>
+                                        <div class="inventions-scheme__icon inventions-scheme__icon4">
+                                            <div class="inventions-scheme__frame"></div>
+                                        </div>
+                                        <div class="inventions-scheme__icon inventions-scheme__icon1">
+                                            <div class="inventions-scheme__frame"></div>
+                                        </div>
+                                        <div class="inventions-scheme__icon inventions-scheme__icon2">
+                                            <div class="inventions-scheme__frame"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="option__card">
                                 <div class="option__title">...узнать, какое значимое событие в истории развития отечественной вычислительной техники произошло сегодня</div>
-                            </div>
-                            <div class="option__card">
-                                <div class="option__title">...пройти тестирование по материалам, представленным на сайте</div>
+                                <div class="option__date-scheme">
+                                    <div class="date-scheme__calendar">
+                                        <div class="date-scheme__number">30</div>
+                                        <div class="date-scheme__month">сентября</div>
+                                    </div>
+                                    <div class="date-scheme__question"></div>
+                                </div>
                             </div>
                         </div>
                     </section>
-                    <section class="main__general" id="general">
-                        
-                    </section>
-                    <section class="main__inventions" id="inventions">
-
-                    </section>
-                    <section class="main__scientists" id="scientists">
-
-                    </section>
-                    <section class="main__date">
-
-                    </section>
                     <section class="main__tests">
-
+                        
                     </section>
                 </main>
             </div>
+            <div onclick="scrollUp()" id="goup"></div>
             <footer class="footer">
                 <div class="credits">
                     <div class="credits__info">
@@ -114,6 +133,17 @@
                 </div>
             </footer>
         </div>
-        <!-- <script src="/frontend/scripts/util.js"></script> -->
+        <script>
+            const date = new Date();
+            const months = [
+                'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 
+                'Августа', 'Сентября', 'Октября', 'Ноябрая', 'Декабря'
+            ];
+            const month = date.getMonth();
+            const day = date.getDate();
+            document.querySelector('.date-scheme__number').textContent = day;
+            document.querySelector('.date-scheme__month').textContent = months[month];
+        </script>
+        <script src="/frontend/scripts/util.js"></script>
     </body>
 </html>
