@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.broken-bulb {
+    background-image: url('/assets/images/decorations/broken_bulb.svg');
+    background-size: 100% 100%;
+    flex: 0 0 200px;
+    width: 200px;
+    aspect-ratio: 1.2;
+    padding-left: 20px;
+}
+
+.container {
+    width: 300px;
+    padding-right: 20px;
+}
+
+.title {
+    font-size: 39px;
+    margin-bottom: 30px;
+}
