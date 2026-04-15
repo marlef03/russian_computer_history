@@ -35,12 +35,13 @@ a {
 
 input[type="checkbox"] {
     all: unset;
-    display: none;
+    position: absolute;
 }
 
 .button {
     all: unset;
     display: block;
+    width: fit-content;
     cursor: pointer;
     font-size: 20px;
     margin: auto;
@@ -337,11 +338,11 @@ input[type="checkbox"] {
 
     .header__toggle-button {
         box-sizing: border-box;
+        cursor: pointer;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 30px;
         padding-left: 16px;
         padding-right: 16px;
         border-left: 1px white solid;
@@ -350,32 +351,53 @@ input[type="checkbox"] {
         font-size: 20px;
     }
 
-    .header__toggle-button::before {
-        content: "";
+    .header__toggle-button__text {
+        display: flex;
+        width: 100%;
+        padding-bottom: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__toggle-button::after {
+        content: " ";
+        width: 0;
+        height: 1px;
+        background-color: white;
+        transition: width 0.4s;
+    }
+
+    .header__toggle-button:is(:hover, :has(.header__toggle-button__checkbox:focus-visible))::after {
+        width: 100%;
+        transition: width 0.4s;
+    }
+
+    .header__toggle-button__text::before {
+        content: " ";
         width: 26px;
         height: 26px;
         background-image: url('/assets/images/decorations/list_arrow.svg');
         rotate: -180deg;
-        transition: 0.4s;
+        transition: rotate 0.4s;
     }
 
-    .header__toggle-button:has(.header__toggle-button__checkbox:checked)::before {
+    .header__toggle-button__checkbox:checked ~ .header__toggle-button__text::before {
         rotate: 0deg;
-        transition: 0.4s;
+        transition: rotate 0.4s;
     }
 
-    .header__toggle-button::after {
-        content: "";
+    .header__toggle-button__text::after {
+        content: " ";
         width: 26px;
         height: 26px;
         background-image: url('/assets/images/decorations/list_arrow.svg');
         rotate: 180deg;
-        transition: 0.4s;
+        transition: rotate 0.4s;
     }
 
-    .header__toggle-button:has(.header__toggle-button__checkbox:checked)::after {
+    .header__toggle-button__checkbox:checked ~ .header__toggle-button__text::after {
         rotate: 0deg;
-        transition: 0.4s;
+        transition: rotate 0.4s;
     }
 
     .header__toggle-button:has(.header__toggle-button__checkbox:checked) + .header__links {

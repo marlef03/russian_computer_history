@@ -306,10 +306,238 @@ section {
     animation: question-flicker 1s steps(1) infinite;
 }
 
+.tests__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tests-scheme {
+    position: relative;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 600px;
+    flex-basis: 600px;
+    aspect-ratio: 1.5;
+    padding: 10px;
+    overflow: hidden;
+    background-color: var(--option-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.tests-scheme__container {
+    position: relative;
+    animation: tests-scheme__container 5s linear infinite;
+}
+
+.tests-scheme__text {
+    background-image: url('/assets/images/decorations/tests_scheme/text.svg');
+    background-size: 100% 100%;
+    width: 100%;
+    aspect-ratio: 1.5;
+}
+
+.tests-scheme__marker {
+    position: absolute;
+    width: 7%;
+    aspect-ratio: 1;
+    background-size: 100% 100%;
+    animation: tests-scheme__marker linear 20s infinite;
+}
+
+.tests-scheme__cursor {
+    position: absolute;
+    width: 5%;
+    aspect-ratio: 0.5;
+    background-size: 100% 100%;
+    background-image: url('/assets/images/decorations/tests_scheme/cursor.svg');
+    animation: tests-scheme__cursor linear 20s infinite;
+}
+
+.tests__desc {
+    box-sizing: border-box;
+    width: 490px;
+    padding: 10px;
+}
+
+.tests__desc__text {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 582px) {
     .title.welcome {
         font-size: 26px;
         text-align: center;
+    }
+}
+
+@keyframes tests-scheme__cursor {
+    0% {
+        top: 60%;
+        right: 40%;
+    }
+    6% {
+        top: 60%;
+        right: 40%;
+    }
+    8% {
+        top: 30%;
+        right: 7%;
+    }
+    14% {
+        top: 30%;
+        right: 7%;
+    }
+    17% {
+        top: 60%;
+        right: 40%;
+    }
+    31% {
+        top: 60%;
+        right: 40%;
+    }
+    33% {
+        top: 58%;
+        right: 6%;
+    }
+    39% {
+        top: 58%;
+        right: 6%;
+    }
+    42% {
+        top: 60%;
+        right: 40%;
+    }
+    56% {
+        top: 60%;
+        right: 40%;
+    }
+    58% {
+        top: 45%;
+        right: 7%;
+    }
+    64% {
+        top: 45%;
+        right: 7%;
+    }
+    67% {
+        top: 60%;
+        right: 40%;
+    }
+    81% {
+        top: 60%;
+        right: 40%;
+    }
+    83% {
+        top: 71%;
+        right: 5%;
+    }
+    89% {
+        top: 71%;
+        right: 5%;
+    }
+    92% {
+        top: 60%;
+        right: 40%;
+    }
+    100% {
+        top: 60%;
+        right: 40%;
+    }
+}
+
+@keyframes tests-scheme__container {
+    0% {
+        margin-top: 400px;
+    }
+    20% {
+        margin-top: 0;
+    }
+    80% {
+        margin-top: 0;
+    }
+    100% {
+        margin-top: -400px;
+    }
+}
+
+@keyframes tests-scheme__marker {
+    0% {
+        visibility: hidden;
+        background-image: url('/assets/images/decorations/tests_scheme/correct.svg');
+        top: 26%;
+        right: 7%;
+    }
+    9.9999% {
+        visibility: hidden;
+    }
+    10% {
+        visibility: visible;
+    }
+    24.9999% {
+        visibility: visible;
+        background-image: url('/assets/images/decorations/tests_scheme/correct.svg');
+        top: 26%;
+        right: 7%;
+    }
+    25% {
+        visibility: hidden;
+        background-image: url('/assets/images/decorations/tests_scheme/incorrect.svg');
+        top: 54%;
+        right: 5%;
+    }
+    34.9999% {
+        visibility: hidden;
+    }
+    35% {
+        visibility: visible;
+    }
+    49.9999% {
+        visibility: visible;
+        background-image: url('/assets/images/decorations/tests_scheme/incorrect.svg');
+        top: 54%;
+        right: 5%;
+    }
+    50% {
+        visibility: hidden;
+        background-image: url('/assets/images/decorations/tests_scheme/incorrect.svg');
+        top: 40%;
+        right: 6%;
+    }
+    59.9999% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }
+    74.9999% {
+        visibility: visible;
+        background-image: url('/assets/images/decorations/tests_scheme/incorrect.svg');
+        top: 40%;
+        right: 6%;
+    }
+    75% {
+        visibility: hidden;
+        background-image: url('/assets/images/decorations/tests_scheme/correct.svg');
+        top: 68%;
+        right: 6%;
+    }
+    84.9999% {
+        visibility: hidden;
+    }
+    85% {
+        visibility: visible;
+    }
+    100% {
+        visibility: visible;
+        background-image: url('/assets/images/decorations/tests_scheme/correct.svg');
+        top: 68%;
+        right: 6%;
     }
 }
 

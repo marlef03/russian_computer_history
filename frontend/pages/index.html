@@ -20,8 +20,10 @@
                     <div class="title__text">История советской и российской вычислительной техники</div>
                 </a>
                 <label class="header__toggle-button">
-                    <input class="header__toggle-button__checkbox" type="checkbox">
-                    Оглавление
+                    <input id="header__toggle-button__checkbox" class="header__toggle-button__checkbox" type="checkbox">
+                    <div class="header__toggle-button__text">
+                        Оглавление
+                    </div>
                 </label>
                 <nav class="header__links">
                     <a href="/general" class="links__card">
@@ -126,7 +128,13 @@
                     <section class="main__tests">
                         <div class="title">Уже всё знаете? Пройдите тест для проверки ваших знаний!</div>
                         <div class="tests__container">
-                            <div class="tests__scheme"></div>
+                            <div class="tests-scheme">
+                                <div class="tests-scheme__container">
+                                    <div class="tests-scheme__text"></div>
+                                    <div class="tests-scheme__marker"></div>
+                                </div>
+                                <div class="tests-scheme__cursor"></div>
+                            </div>
                             <div class="tests__desc">
                                 <div class="tests__desc__text">
                                     Тест состоит из вопросов по общей истории и даёт возможность оценить свои знания
@@ -142,7 +150,7 @@
                                 <div class="stats__desc__text">Тогда вам может быть интересно узнать ваш прогресс в освоении материала и прохождении тестов. К счастью, у нашего сайта есть и такая функция</div>
                                 <a href="/stats" class="button">Посмотреть статистику</a>
                             </div>
-                            <div class="stats__scheme"></div>
+                            <div class="stats-scheme"></div>
                         </div>
                     </section>
                     <section class="main__start">
