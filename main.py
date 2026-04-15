@@ -1,52 +1,44 @@
-from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, RedirectResponse
-import uvicorn
+import json
+import os
 
-app = FastAPI()
-
-app.mount('/assets', StaticFiles(directory='assets'), name='assets')
+from aiohttp import web
 
 
-@app.get('/')
-def get_index():
-    return FileResponse('frontend/pages/index.html')
+BASE_PATH = os.path.dirname(__file__)
+HTML_PATH = os.path.join(BASE_PATH, 'frontend', 'pages')
 
 
-@app.get('/general')
-def get_general(chapter: str, page: str):
-    return FileResponse(f'frontend/pages/general/{chapter}/{page}.html')
+async def main_handler(request: web.Request):
+    path = request.path
+
+    if path.startswith('/api'):
+        return web.Response(text=json.dumps({'path': f'{path}', 'method': f'{request.method}', 'query': f'{request.query}'}))
+
+    if path == '/':
+        return web.FileResponse(os.path.join(HTML_PATH, 'index.html'))
+
+    """file_path = os.path.join(HTML_PATH, os.path.basename(path))
+
+    if os.path.isfile(file_path):
+        return web.FileResponse(file_path)"""
+
+    raise web.HTTPNotFound()
 
 
-@app.get('/scientists')
-def get_scientists():
-    return FileResponse('frontend/pages/scientists.html')
+@web.middleware
+async def error_handler(request, handler):
+    try:
+        response = await handler(request)
+
+        return response
+    except web.HTTPException as e:
+        return web.FileResponse(os.path.join(HTML_PATH, 'filenotfound.html'))
 
 
-@app.get('/inventions')
-def get_inventions():
-    return FileResponse('frontend/pages/inventions.html')
+app = web.Application(middlewares=[error_handler])
 
+app.router.add_static('/assets/', path=os.path.join(BASE_PATH, 'assets'), name='assets')
 
-@app.get('/date')
-def get_date():
-    return FileResponse('frontend/pages/date.html')
+app.router.add_route('*', '/{tail:.*}', main_handler)
 
-
-@app.get('/stats')
-def get_stats():
-    return FileResponse('frontend/pages/stats.html')
-
-
-@app.get('/tests')
-def get_tests(chapter: str):
-    return FileResponse(f'frontend/pages/tests/{chapter}.html')
-
-
-@app.exception_handler(404)
-async def fnf_hander(request, exc):
-    return FileResponse('frontend/pages/filenotfound.html')
-
-
-if __name__ == "__main__":
-    uvicorn.run('main:app', host='192.168.0.110', reload=True)
+web.run_app(app, host='192.168.50.78', port=80)
