@@ -3,9 +3,109 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Главные достижения | История ВТ</title>
+        <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+        <link rel="stylesheet" href="/assets/styles/style.css">
+        <link rel="stylesheet" href="/assets/styles/inventions.css">
     </head>
     <body>
-        
+        <div class="root">
+            <header class="header">
+                <a href="/" class="header__title">
+                    <div class="header__logo"></div>
+                    <div class="title__text">История советской и российской вычислительной техники</div>
+                </a>
+                <label class="header__toggle-button">
+                    <input id="header__toggle-button__checkbox" class="header__toggle-button__checkbox" type="checkbox">
+                    <div class="header__toggle-button__text">
+                        Оглавление
+                    </div>
+                </label>
+                <nav class="header__links">
+                    <a href="/general" class="links__card">
+                        <div class="link__icon general"></div>
+                        <div class="link__text">Общая история</div>
+                    </a>
+                    <a href="/scientists" class="links__card">
+                        <div class="link__icon scientists"></div>
+                        <div class="link__text">Значимые личности</div>
+                    </a>
+                    <a href="/inventions" class="links__card">
+                        <div class="link__icon inventions"></div>
+                        <div class="link__text">Главные достижения</div>
+                    </a>
+                    <a href="/date" class="links__card">
+                        <div class="link__icon date"></div>
+                        <div class="link__text">В этот день...</div>
+                    </a>
+                    <a href="/tests" class="links__card">
+                        <div class="link__icon tests"></div>
+                        <div class="link__text">Тесты</div>
+                    </a>
+                    <a href="/stats" class="links__card">
+                        <div class="link__icon stats"></div>
+                        <div class="link__text">Статистика</div>
+                    </a>
+                </nav>
+            </header>
+            <div class="main">
+                <main>
+                    <section class="description">
+                        <h1 class="title">Главные достижения советской и российской вычислительной техники</h1>
+                        <div class="desc">В этом разделе вы можете ознакомиться со списком главных отечественных достижений в области вычислительной техники и их кратким описанием</div>
+                        <nav class="table-of-contents">
+                            <h2 class="title">Содержание</h2>
+                            <ul>
+                                <li><a href="#mesm">1. МЭСМ</a></li>
+                                <li><a href="#m-1">2. М-1</a></li>
+                                <li><a href="#besm-1">3. БЭСМ-1</a></li>
+                                <li><a href="#setun">4. Сетунь</a></li>
+                                <li><a href="#mir-1">5. МИР-1</a></li>
+                                <li><a href="#besm-6">6. БЭСМ-6</a></li>
+                                <li><a href="#es-evm">7. ЕС ЭВМ</a></li>
+                                <li><a href="#elbrus-1">8. Эльбрус-1</a></li>
+                                <li><a href="#agat">9. Агат</a></li>
+                                <li><a href="#bk-0010">10. БК-0010</a></li>
+                                <li><a href="#lomonosov">11. Ломоносов</a></li>
+                                <li><a href="#elbrus-8s">12. Эльбрус-8С</a></li>
+                                <li><a href="#baikal-t1">13. Байкал-Т1</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section id="mesm">
+                        <h2 class="title">1. МЭСМ</h2>
+                        <div class="content">
+                            <img class="image" src="/assets/images/inventions/" alt="МЭСМ">
+                            <div class="desc"></div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <div onclick="scrollUp()" id="goup"></div>
+            <footer class="footer">
+                <div class="credits">
+                    <div class="credits__info">
+                        Мини-проект по дисциплине<br>
+                        "История российской науки и техники"
+                        <div class="source__wrapper">
+                            <a href="https://github.com/marlef03/russian_computer_history" target="_blank" class="credits__source">Исходный код проекта</a>
+                        </div>
+                    </div>
+                    <div class="credits__authors">
+                        Работу выполнили:
+                        <div class="authors__1">
+                            Труханов Марк (frontend)
+                        </div>
+                        <div class="authors__2">
+                            Понкратов Игнат (backend, сбор информации)
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>

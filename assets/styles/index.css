@@ -5,32 +5,6 @@
     font-style: normal;
 }
 
-.main {
-    position: relative;
-    margin: 0px 10px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-main {
-    max-width: 1142px;
-    margin: 0px auto;
-}
-
-section {
-    background-color: var(--section-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 10px;
-}
-
-.title {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .main__welcome {
     display: flex;
     flex-direction: row-reverse;
@@ -54,39 +28,11 @@ section {
     margin-right: 20px;
 }
 
-.decoration {
-    position: absolute;
-    width: 100px;
-    height: 120px;
-}
-
-.decoration.round-bulb {
-    top: 20px;
-    animation: round-bulb-flicker steps(1) 1s infinite;
-}
-
-.decoration.rect-bulb {
-    top: 20px;
-    animation: rect-bulb-flicker steps(1) 1.25s infinite;
-}
-
-.decoration.left {
-    left: 10px;
-}
-
-.decoration.right {
-    right: 10px;
-}
-
 .options__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-}
-
-.option__title {
-    line-height: 24px;
 }
 
 .option__card {
@@ -100,13 +46,17 @@ section {
     background-color: var(--option-color);
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    transition: 0.3s;
+    transition: border-color 0.3s;
 }
 
 .option__card:is(:hover, :focus-visible, :focus) {
     outline: none;
     border-color: var(--border-active-color);
-    transition: 0.3s;
+    transition: border-color 0.3s;
+}
+
+.option__title {
+    line-height: 24px;
 }
 
 .option__general-scheme {
@@ -155,19 +105,19 @@ section {
     border-radius: 20px;
 }
 
-.general-scheme__icon1 {
+.general-scheme__icon.icon1 {
     background-image: url('/assets/images/decorations/general_scheme/icon1.svg');
 }
 
-.general-scheme__icon2 {
+.general-scheme__icon.icon2 {
     background-image: url('/assets/images/decorations/general_scheme/icon2.svg');
 }
 
-.general-scheme__icon3 {
+.general-scheme__icon.icon3 {
     background-image: url('/assets/images/decorations/general_scheme/icon3.svg');
 }
 
-.general-scheme__icon4 {
+.general-scheme__icon.icon4 {
     background-image: url('/assets/images/decorations/general_scheme/icon4.svg');
 }
 
@@ -184,7 +134,7 @@ section {
     background-size: 100% 100%;
 }
 
-.scientists-scheme__icon1 {
+.scientists-scheme__icon.icon1 {
     background-image: url('/assets/images/decorations/scientists_scheme/icon1.svg');
     top: calc(100% - 100px);
     left: calc(50% - 50px);
@@ -193,7 +143,7 @@ section {
     animation: scientists 5s infinite;
 }
 
-.scientists-scheme__icon2 {
+.scientists-scheme__icon.icon2 {
     background-image: url('/assets/images/decorations/scientists_scheme/icon1.svg');
     top: calc(50% - 40px);
     left: calc(100% - 80px);
@@ -202,7 +152,7 @@ section {
     animation: scientists 5s -1.25s infinite;
 }
 
-.scientists-scheme__icon3 {
+.scientists-scheme__icon.icon3 {
     background-image: url('/assets/images/decorations/scientists_scheme/icon1.svg');
     top: 0;
     left: calc(50% - 30px);
@@ -211,7 +161,7 @@ section {
     animation: scientists 5s -2.5s infinite;
 }
 
-.scientists-scheme__icon4 {
+.scientists-scheme__icon.icon4 {
     background-image: url('/assets/images/decorations/scientists_scheme/icon1.svg');
     top: calc(50% - 40px);
     left: 0;
@@ -251,19 +201,19 @@ section {
     background-position: 50%;
 }
 
-.inventions-scheme__icon1 {
+.inventions-scheme__icon.icon1 {
     background-image: url('/assets/images/inventions/11.jpg');
 }
 
-.inventions-scheme__icon2 {
+.inventions-scheme__icon.icon2 {
     background-image: url('/assets/images/inventions/12.jpg');
 }
 
-.inventions-scheme__icon3 {
+.inventions-scheme__icon.icon3 {
     background-image: url('/assets/images/inventions/8.jpg');
 }
 
-.inventions-scheme__icon4 {
+.inventions-scheme__icon.icon4 {
     background-image: url('/assets/images/inventions/13.jpg');
 }
 
@@ -404,13 +354,6 @@ section {
     background-position: 50% 50%;
     background-size: 70% 70%;
     animation: stats-scheme steps(1) 2s infinite;
-}
-
-@media (max-width: 582px) {
-    .title.welcome {
-        font-size: 26px;
-        text-align: center;
-    }
 }
 
 @keyframes stats-scheme {

@@ -238,6 +238,32 @@ input[type="checkbox"] {
     display: none;
 }
 
+.main {
+    position: relative;
+    padding: 10px;
+}
+
+main {
+    max-width: 1142px;
+    margin: 0px auto;
+}
+
+section {
+    background-color: var(--section-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-weight: normal;
+    font-size: 42px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
 .footer {
     border-top: 1px white solid;
     padding: 20px;
@@ -405,6 +431,11 @@ input[type="checkbox"] {
         visibility: visible;
         max-height: 500px;
         transition: visibility 0.3s, max-height 0.6s;
+    }
+
+    .title {
+        font-size: 26px;
+        text-align: center;
     }
 }
 
