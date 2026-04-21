@@ -49,10 +49,12 @@
     transition: border-color 0.3s;
 }
 
-.option__card:is(:hover, :focus-visible, :focus) {
-    outline: none;
-    border-color: var(--border-active-color);
-    transition: border-color 0.3s;
+@media (hover: hover) {
+    .option__card:is(:hover, :focus-visible, :focus) {
+        outline: none;
+        border-color: var(--border-active-color);
+        transition: border-color 0.3s;
+    }
 }
 
 .option__title {

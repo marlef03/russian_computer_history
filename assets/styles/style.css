@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-* {
+:root {
     --title-normal: #FFFA;
     --title-flicker: #FFF7;
     --header-color: #191919;
@@ -17,10 +17,10 @@
     --option-color: #363636;
     --button-color: #363636;
     --button-active-color: #444;
+    scroll-behavior: smooth;
 }
 
 body {
-    scroll-behavior: smooth;
     background-color: var(--main-color);
     margin: 0px;
     color: white;
@@ -53,10 +53,12 @@ input[type="checkbox"] {
     transition: 0.3s;
 }
 
-.button:is(:hover, :focus, :focus-visible) {
-    border-color: var(--border-active-color);
-    background-color: var(--button-active-color);
-    transition: 0.3s;
+@media (hover: hover) {
+    .button:is(:hover, :focus, :focus-visible) {
+        border-color: var(--border-active-color);
+        background-color: var(--button-active-color);
+        transition: 0.3s;
+    }
 }
 
 #goup {
@@ -129,11 +131,13 @@ input[type="checkbox"] {
     transition: scale 0.5s;
 }
 
-.header__title:is(:hover, :focus, :focus-visible) {
-    outline: none;
-    border-radius: 10px;
-    scale: 1;
-    transition: scale 0.5s;
+@media (hover: hover) {
+    .header__title:is(:hover, :focus, :focus-visible) {
+        outline: none;
+        border-radius: 10px;
+        scale: 1;
+        transition: scale 0.5s;
+    }
 }
 
 .header__logo {
@@ -212,10 +216,12 @@ input[type="checkbox"] {
     margin-top: 4px;
 }
 
-.links__card:is(:hover, :focus, :focus-visible) {
-    outline: none;
-    scale: 1.08;
-    transition: scale 0.5s;
+@media (hover: hover) {
+    .links__card:is(:hover, :focus, :focus-visible) {
+        outline: none;
+        scale: 1.08;
+        transition: scale 0.5s;
+    }
 }
 
 .links__card::after {
@@ -229,9 +235,11 @@ input[type="checkbox"] {
     transition: width 0.5s;
 }
 
-.links__card:is(:hover, :focus, :focus-visible)::after {
-    width: 100%;
-    transition: width 0.5s;
+@media (hover: hover) {
+    .links__card:is(:hover, :focus, :focus-visible)::after {
+        width: 100%;
+        transition: width 0.5s;
+    }
 }
 
 .header__toggle-button {
@@ -298,9 +306,11 @@ section {
     transition: width 0.5s;
 }
 
-.source__wrapper:is(:hover, :has(.credits__source:is(:focus, :focus-visible)))::after {
-    width: 100%;
-    transition: width 0.5s;
+@media (hover: hover) {
+    .source__wrapper:is(:hover, :has(.credits__source:is(:focus, :focus-visible)))::after {
+        width: 100%;
+        transition: width 0.5s;
+    }
 }
 
 .credits__source:is(:focus, :focus-visible) {
@@ -394,9 +404,11 @@ section {
         transition: width 0.4s;
     }
 
-    .header__toggle-button:is(:hover, :has(.header__toggle-button__checkbox:focus-visible))::after {
-        width: 100%;
-        transition: width 0.4s;
+    @media (hover: hover) {
+        .header__toggle-button:is(:hover, :has(.header__toggle-button__checkbox:focus-visible))::after {
+            width: 100%;
+            transition: width 0.4s;
+        }
     }
 
     .header__toggle-button__text::before {
