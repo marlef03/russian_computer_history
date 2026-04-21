@@ -14,9 +14,76 @@
     border-radius: 5px;
 }
 
+.links__toggle-button {
+    cursor: pointer;
+}
+
+.links__toggle-button::after {
+    content: " ";
+    display: block;
+    margin: auto;
+    width: 0;
+    height: 1px;
+    margin-top: 2px;
+    background-color: white;
+    transition: width 0.4s;
+}
+
+.links__toggle-button:is(:hover, :has(.links__toggle-button__checkbox:focus-visible))::after {
+    width: 100%;
+    transition: width 0.4s;
+}
+
+.links__toggle-button__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
 ul {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
     list-style: none;
+    margin: 0;
     padding-left: 0;
+    transition: visibility 0.6s, padding-top 0.6s, height 0.4s;
+}
+
+.links__toggle-button:has(.links__toggle-button__checkbox:checked) ~ ul {
+    visibility: visible;
+    padding-top: 20px;
+    height: 720px;
+    transition: padding-top 0.6s, height 0.4s;
+}
+
+.links__toggle-button__title::before {
+    content: " ";
+    background-image: url('/assets/images/decorations/list_arrow.svg');
+    width: 26px;
+    height: 26px;
+    rotate: 180deg;
+    transition: rotate 0.4s;
+}
+
+.links__toggle-button__checkbox:checked ~ .links__toggle-button__title::before {
+    rotate: 0deg;
+    transition: rotate 0.4s;
+}
+
+.links__toggle-button__title::after {
+    content: " ";
+    background-image: url('/assets/images/decorations/list_arrow.svg');
+    width: 26px;
+    height: 26px;
+    rotate: -180deg;
+    transition: rotate 0.4s;
+}
+
+.links__toggle-button__checkbox:checked ~ .links__toggle-button__title::after {
+    rotate: 0deg;
+    transition: rotate 0.4s;
 }
 
 li {
