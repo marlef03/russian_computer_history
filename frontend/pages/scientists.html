@@ -3,9 +3,271 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Выдающиеся личности | Российская ВТ</title>
+        <title>Значимые личности | История ВТ</title>
+        <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+        <link rel="stylesheet" href="/assets/styles/style.css">
+        <link rel="stylesheet" href="/assets/styles/onepagecontent.css">
+        <style>
+            .links__toggle-button:has(.links__toggle-button__checkbox:checked) ~ ul {
+                visibility: visible;
+                padding-top: 20px;
+                height: 430px;
+                transition: padding-top 0.6s, height 0.4s;
+            }
+        </style>
     </head>
     <body>
-        
+        <div class="root">
+            <header class="header">
+                <a href="/" class="header__title">
+                    <div class="header__logo"></div>
+                    <div class="title__text">История советской и российской вычислительной техники</div>
+                </a>
+                <label class="header__toggle-button">
+                    <input id="header__toggle-button__checkbox" class="header__toggle-button__checkbox" type="checkbox">
+                    <div class="header__toggle-button__text">
+                        Оглавление
+                    </div>
+                </label>
+                <nav class="header__links">
+                    <a href="/general" class="links__card">
+                        <div class="link__icon general"></div>
+                        <div class="link__text">Общая история</div>
+                    </a>
+                    <a href="/scientists" class="links__card">
+                        <div class="link__icon scientists"></div>
+                        <div class="link__text">Значимые личности</div>
+                    </a>
+                    <a href="/inventions" class="links__card">
+                        <div class="link__icon inventions"></div>
+                        <div class="link__text">Главные достижения</div>
+                    </a>
+                    <a href="/date" class="links__card">
+                        <div class="link__icon date"></div>
+                        <div class="link__text">В этот день...</div>
+                    </a>
+                    <a href="/tests" class="links__card">
+                        <div class="link__icon tests"></div>
+                        <div class="link__text">Тесты</div>
+                    </a>
+                    <a href="/stats" class="links__card">
+                        <div class="link__icon stats"></div>
+                        <div class="link__text">Статистика</div>
+                    </a>
+                </nav>
+            </header>
+            <div class="main">
+                <main>
+                    <section class="description">
+                        <h1 class="title description__title">Значимые личности</h1>
+                        <div>В этом разделе вы можете ознакомиться с биографиями выдающихся советских и российских учёных, внёсших вклад в развитие отечественной вычислительной техники</div>
+                        <nav class="table-of-contents">
+                            <label class="links__toggle-button">
+                                <input class="links__toggle-button__checkbox" type="checkbox">
+                                <div class="links__toggle-button__title">Содержание</div>
+                            </label>
+                            <ul>
+                                <li><a href="#s_a_lebedev">1. Сергей Алексеевич Лебедев</a></li>
+                                <li><a href="#i_s_bruk">2. Исаак Семенович Брук</a></li>
+                                <li><a href="#b_i_rameev">3. Башир Искандарович Рамеев</a></li>
+                                <li><a href="#v_m_glushkov">4. Виктор Михайлович Глушков</a></li>
+                                <li><a href="#n_p_brusnetsov">5. Николай Петрович Брусенцов</a></li>
+                                <li><a href="#b_a_babayan">6. Борис Арташесович Бабаян</a></li>
+                                <li><a href="#m_a_kartsev">7. Михаил Александрович Карцев</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section id="s_a_lebedev">
+                        <h2 class="title">1. Сергей Алексеевич Лебедев</h2>
+                        <div class="content">
+                            <img class="image" src="/assets/images/scientists/s_a_lebedev.webp" alt="Сергей Алексеевич Лебедев" title="Сергей Алексеевич Лебедев">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Годы жизни</div>
+                                    <div class="desc__part__text">1902-1974</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Внёс вклад в</div>
+                                    <div class="desc__part__text">МЭСМ, БЭСМ-1, М-20, БЭСМ-6</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Биография</div>
+                                    <div class="desc__part__text">
+                                        Основоположник отечественной вычислительной техники, академик АН СССР. Свою научную деятельность начинал в области электроэнергетики, решая задачи устойчивости энергосистем с помощью моделирующих устройств. В 1948–1951 годах в Киеве в кратчайшие сроки создал МЭСМ (Малую электронную счетную машину) — первую в СССР и континентальной Европе ЭВМ с хранимой программой. Позднее, возглавив Институт точной механики и вычислительной техники (ИТМиВТ) в Москве, руководил разработкой серии БЭСМ. Его главным триумфом стала БЭСМ-6 (1967) — первая советская суперЭВМ с производительностью 1 млн операций в секунду, опередившая многие западные аналоги и остававшаяся в строю более 20 лет в самых ответственных отраслях науки, космонавтики и обороны.
+                                    </div>
+                                </div>
+                                <a class="paragraph-anchor" href="#s_a_lebedev"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="i_s_bruk">
+                        <div class="section__header">
+                            <h2 class="title">2. Исаак Семенович Брук</h2>
+                        </div>
+                        <div class="content">
+                            <img class="image" src="/assets/images/scientists/i_s_bruk.webp" alt="Исаак Семенович Брук" title="Исаак Семенович Брук">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Годы жизни</div>
+                                    <div class="desc__part__text">1902–1974</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Внёс вклад в</div>
+                                    <div class="desc__part__text">М-1, М-2, М-3, серия «Наири»</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Биография</div>
+                                    <div class="desc__part__text">
+                                        Выдающийся ученый в области электротехники и ИТ, член-корреспондент АН СССР. Еще до войны создавал механические интеграторы для решения дифференциальных уравнений. В 1948 году совместно с Б. И. Рамеевым представил первый в СССР проект автоматической цифровой вычислительной машины. Под его руководством была создана малогабаритная ЭВМ М-1 (1951), собранная на отечественных компонентах. Брук был сторонником децентрализации вычислений и создания доступных «малых» машин для инженерных расчетов, что привело к появлению серий М-2 и М-3. Основал Институт электронных управляющих машин (ИНЭУМ), где развивал направление управляющих вычислительных комплексов для автоматизации тяжелой промышленности.
+                                    </div>
+                                </div>
+                                <a class="paragraph-anchor" href="#i_s_bruk"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="b_i_rameev">
+                        <h2 class="title">3. Башир Искандарович Рамеев</h2>
+                        <div class="content">
+                            <img class="image" src="/assets/images/scientists/b_i_rameev.webp" alt="Башир Искандарович Рамеев" title="Башир Искандарович Рамеев">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Годы жизни</div>
+                                    <div class="desc__part__text">1918–1994</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Внёс вклад в</div>
+                                    <div class="desc__part__text">Стрела, серия «Урал» (Урал-1, Урал-2, Урал-11 – Урал-16)</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Биография</div>
+                                    <div class="desc__part__text">
+                                        Генеральный конструктор первых серийных отечественных компьютеров. Будучи сыном репрессированного инженера, Рамеев не смог получить высшее образование, но благодаря самообразованию и таланту стал ведущим специалистом страны. В соавторстве с И. С. Бруком получил первое в СССР авторское свидетельство на цифровую ЭВМ. С 1955 года работал в Пензе, где возглавил разработку семейства ЭВМ «Урал». Его машины стали основой вычислительной инфраструктуры Советского Союза в 50–60-х годах. Рамеев первым в стране внедрил концепцию программной совместимости внутри семейства машин (ряд «Урал-11 — Урал-16»), заложив основы для последующего развития системного программирования и стандартизации архитектур.
+                                    </div>
+                                </div>
+                                <a class="paragraph-anchor" href="#b_i_rameev"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="v_m_glushkov">
+                        <h2 class="title">4. Виктор Михайлович Глушков</h2>
+                        <div class="content">
+                            <img class="image" src="/assets/images/scientists/v_m_glushkov.webp" alt="Виктор Михайлович Глушков" title="Виктор Михайлович Глушков">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Годы жизни</div>
+                                    <div class="desc__part__text">1923–1982</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Внёс вклад в</div>
+                                    <div class="desc__part__text">Серия «МИР» (МИР-1, МИР-2), «Днепр», проект ОГАС</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Биография</div>
+                                    <div class="desc__part__text">
+                                        Академик, математик с мировым именем, решивший пятую проблему Гильберта. В вычислительной технике прославился как создатель машин серии «МИР» (Машина для инженерных расчетов), которые фактически были прообразами персональных компьютеров: они оснащались дисплеем, световым пером для ввода данных и аппаратно понимали язык программирования высокого уровня. Глушков основал Институт кибернетики в Киеве и был главным идеологом создания Общегосударственной автоматизированной системы (ОГАС) — амбициозного проекта по цифровому управлению всей экономикой страны через единую сеть вычислительных центров. Его работы по теории цифровых автоматов стали фундаментом для проектирования последующих поколений ЭВМ.
+                                    </div>
+                                </div>
+                                <a class="paragraph-anchor" href="#v_m_glushkov"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="n_p_brusnetsov">
+                        <h2 class="title">5. Николай Петрович Брусенцов</h2>
+                        <div class="content">
+                            <img class="image" src="/assets/images/scientists/n_p_brusnetsov.webp" alt="Николай Петрович Брусенцов" title="Николай Петрович Брусенцов">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Годы жизни</div>
+                                    <div class="desc__part__text">1925–2014</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Внёс вклад в</div>
+                                    <div class="desc__part__text">«Сетунь», «Сетунь-70»</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Биография</div>
+                                    <div class="desc__part__text">
+                                        Уникальный конструктор, создавший единственную в истории серийную ЭВМ на основе троичной логики. Работая в МГУ, он предложил использовать систему счисления с основанием 3 (значения -1, 0, 1), что позволило создать машину «Сетунь» (1958) на базе надежных феррит-диодных элементов. «Сетунь» отличалась поразительной компактностью, дешевизной и эффективностью архитектуры, превосходя двоичные аналоги того времени по удобству программирования и отказоустойчивости. Несмотря на успех (было выпущено 50 машин), троичное направление не получило масштабной поддержки со стороны профильных министерств, хотя Брусенцов продолжал развивать эти идеи в проекте «Сетунь-70» и теоретических работах по логике до конца жизни.
+                                    </div>
+                                </div>
+                                <a class="paragraph-anchor" href="#n_p_brusnetsov"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="b_a_babayan">
+                        <h2 class="title">6. Борис Арташесович Бабаян</h2>
+                        <div class="content">
+                            <img class="image" src="/assets/images/scientists/b_a_babayan.webp" alt="Борис Арташесович Бабаян" title="Борис Арташесович Бабаян">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Годы жизни</div>
+                                    <div class="desc__part__text">род. 1933</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Внёс вклад в</div>
+                                    <div class="desc__part__text">Серия «Эльбрус» (Эльбрус-1, Эльбрус-2), архитектура E2K</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Биография</div>
+                                    <div class="desc__part__text">
+                                        Ведущий российский разработчик архитектур вычислительных систем, член-корреспондент РАН. Ученик С. А. Лебедева, он возглавил разработку многопроцессорных вычислительных комплексов серии «Эльбрус». В этих машинах впервые в мире были реализованы многие революционные идеи: суперскалярность, аппаратная поддержка тегов памяти для обеспечения безопасности и принципы широкого командного слова (VLIW). Система «Эльбрус-2» использовалась в критически важных объектах обороны и ПВО. В 2004 году Бабаян стал первым европейским ученым, получившим статус Intel Fellow. Его наработки легли в основу современных отечественных процессоров серии «Эльбрус», разрабатываемых компанией МЦСТ.
+                                    </div>
+                                </div>
+                                <a class="paragraph-anchor" href="#b_a_babayan"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="m_a_kartsev">
+                        <h2 class="title">7. Михаил Александрович Карцев</h2>
+                        <div class="content">
+                            <img class="image" src="/assets/images/scientists/m_a_kartsev.webp" alt="Михаил Александрович Карцев" title="Михаил Александрович Карцев">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Годы жизни</div>
+                                    <div class="desc__part__text">1923–1983</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Внёс вклад в</div>
+                                    <div class="desc__part__text">М-4, М-10, М-13</div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Биография</div>
+                                    <div class="desc__part__text">
+                                        Гениальный конструктор, специализировавшийся на создании сверхмощных систем для обработки сигналов в реальном времени. В начале пути работал с И. С. Бруком над машиной М-2. Позже возглавил разработку ЭВМ М-4 для управления радиолокационными станциями в системе противоракетной обороны. Его главным достижением стала многопроцессорная система М-10, которая в 70-е годы была одной из самых производительных в мире благодаря уникальной векторно-параллельной архитектуре. Машины Карцева десятилетиями обеспечивали работу систем предупреждения о ракетном нападении и контроля космического пространства. Он считается одним из основоположников системного подхода к проектированию высокопроизводительных вычислительных комплексов.
+                                    </div>
+                                </div>
+                                <a class="paragraph-anchor" href="#m_a_kartsev"></a>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <div onclick="scrollUp()" id="goup"></div>
+            <footer class="footer">
+                <div class="credits">
+                    <div class="credits__info">
+                        Мини-проект по дисциплине<br>
+                        "История российской науки и техники"
+                        <div class="source__wrapper">
+                            <a href="https://github.com/marlef03/russian_computer_history" target="_blank" class="credits__source">Исходный код проекта</a>
+                        </div>
+                    </div>
+                    <div class="credits__authors">
+                        Работу выполнили:
+                        <div class="authors__1">
+                            Труханов Марк (frontend)
+                        </div>
+                        <div class="authors__2">
+                            Понкратов Игнат (backend, сбор информации)
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="/assets/scripts/util.js"></script>
     </body>
 </html>
