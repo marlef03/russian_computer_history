@@ -6,7 +6,7 @@ function scrollUp() {
 }
 
 function showGoUp() {
-    if (window.scrollY > 400) {
+    if (window.scrollY > window.innerHeight) {
         document.getElementById('goup').classList.add('show')
     }
     else {
