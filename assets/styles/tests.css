@@ -1,0 +1,149 @@
+.question__block {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+section:nth-child(odd) .question__block {
+    flex-direction: row-reverse;
+}
+
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 10px;
+    width: 590px;
+    padding: 10px;
+    background-color: var(--option-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.answer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-basis: 500px;
+    max-width: 590px;
+    padding: 10px;
+    background-color: var(--option-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.answer__text {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.answer__options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer-option {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--field-color);
+}
+
+.answer-option:has(:checked) {
+    background-color: var(--button-selected-color);
+    border-color: var(--border-selected-color);
+}
+
+@media (hover: hover) {
+    .answer-option:is(:hover, :has(:is(:focus-visible))):has(:checked) {
+        background-color: var(--button-selected-hover-color);
+        border-color: var(--border-selected-hover-color);
+    }
+}
+
+.answer__field {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--field-color);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: white;
+    font-family: 'Roboto Serif', sans-serif;
+    transition: 0.3s;
+}
+
+.answer__field:is(:focus, :focus-visible) {
+    outline: none;
+    border-color: var(--border-active-color);
+    background-color: var(--button-active-color);
+    transition: 0.3s;
+}
+
+@media (hover: hover) {
+    .answer__field:is(:hover, :focus, :focus-visible) {
+        outline: none;
+        border-color: var(--border-active-color);
+        background-color: var(--button-active-color);
+        transition: 0.3s;
+    }
+}
+
+#result-block {
+    visibility: hidden;
+    box-sizing: border-box;
+    margin: auto;
+    height: 0;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+#result-block.show {
+    visibility: visible;
+    height: fit-content;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+
+#result {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#result-scheme__container {
+    height: 80px;
+    border-radius: 20px;
+    background-color: var(--option-color);
+    border: 2px solid var(--border-active-color);
+    overflow: hidden;
+}
+
+#result-scheme {
+    height: 100%;
+    width: var(--result-scheme-width);
+    border-radius: 20px;
+    background-image: repeating-linear-gradient(-45deg, white, white 15px, transparent 15px, transparent 30px);
+    transition: 1s;
+}
+
+#submit-error {
+    visibility: hidden;
+    height: 0;
+}
+
+#submit-error.show {
+    visibility: visible;
+    height: fit-content;
+}
