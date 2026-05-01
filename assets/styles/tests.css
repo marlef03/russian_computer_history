@@ -134,7 +134,7 @@ section:nth-child(odd) .question__block {
     height: 100%;
     width: var(--result-scheme-width);
     border-radius: 20px;
-    background-image: repeating-linear-gradient(-45deg, white, white 15px, transparent 15px, transparent 30px);
+    background-image: repeating-linear-gradient(-45deg, var(--border-active-color), var(--border-active-color) 15px, transparent 15px, transparent 30px);
     transition: 1s;
 }
 

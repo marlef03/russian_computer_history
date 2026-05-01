@@ -1,0 +1,51 @@
+.progress__container {
+    height: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.progress__bar {
+    height: 100%;
+    width: 0;
+    background-image: repeating-linear-gradient(-45deg, var(--border-active-color), var(--border-active-color) 15px, transparent 15px, transparent 30px);
+    border-radius: 16px;
+}
+
+.title:not(.description__title) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.title:not(.description__title)::before {
+    content: "";
+    display: inline-block;
+    height: 40px;
+    aspect-ratio: 1;
+    background-size: 100% 100%;
+}
+
+#general .title:not(.description__title)::before {
+    background-image: url('/assets/images/header/general_icon.svg');
+}
+
+#scientists .title:not(.description__title)::before {
+    background-image: url('/assets/images/header/scientists_icon.svg');
+}
+
+#inventions .title:not(.description__title)::before {
+    background-image: url('/assets/images/header/inventions_icon.svg');
+}
+
+#date .title:not(.description__title)::before {
+    background-image: url('/assets/images/header/date_icon.svg');
+}
+
+#tests .title:not(.description__title)::before {
+    background-image: url('/assets/images/header/tests_icon.svg');
+}

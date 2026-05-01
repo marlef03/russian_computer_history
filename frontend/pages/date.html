@@ -86,5 +86,10 @@
             </footer>
         </div>
         <script src="/assets/scripts/util.js"></script>
+        <script>
+            if ({{ real }}) {
+                localStorage.setItem('date{{ day }}.{{ month }}', '');
+            }
+        </script>
     </body>
 </html>

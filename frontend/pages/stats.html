@@ -3,9 +3,248 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Статистика | История ВТ</title>
+        <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+        <link rel="stylesheet" href="/assets/styles/style.css">
+        <link rel="stylesheet" href="/assets/styles/onepagecontent.css">
+        <link rel="stylesheet" href="/assets/styles/stats.css">
+        <style>
+            .links__toggle-button:has(.links__toggle-button__checkbox:checked) ~ ul {
+                visibility: visible;
+                padding-top: 20px;
+                height: 300px;
+                transition: padding-top 0.6s, height 0.4s;
+            }
+        </style>
     </head>
     <body>
-        
+        <div class="root">
+            <header class="header">
+                <a href="/" class="header__title">
+                    <div class="header__logo"></div>
+                    <div class="title__text">История советской и российской вычислительной техники</div>
+                </a>
+                <label class="header__toggle-button">
+                    <input id="header__toggle-button__checkbox" class="header__toggle-button__checkbox" type="checkbox">
+                    <div class="header__toggle-button__text">
+                        Оглавление
+                    </div>
+                </label>
+                <nav class="header__links">
+                    <a href="/general" class="links__card">
+                        <div class="link__icon general"></div>
+                        <div class="link__text">Общая история</div>
+                    </a>
+                    <a href="/scientists" class="links__card">
+                        <div class="link__icon scientists"></div>
+                        <div class="link__text">Значимые личности</div>
+                    </a>
+                    <a href="/inventions" class="links__card">
+                        <div class="link__icon inventions"></div>
+                        <div class="link__text">Главные достижения</div>
+                    </a>
+                    <a href="/date" class="links__card">
+                        <div class="link__icon date"></div>
+                        <div class="link__text">В этот день...</div>
+                    </a>
+                    <a href="/tests" class="links__card">
+                        <div class="link__icon tests"></div>
+                        <div class="link__text">Тесты</div>
+                    </a>
+                    <a href="/stats" class="links__card">
+                        <div class="link__icon stats"></div>
+                        <div class="link__text">Статистика</div>
+                    </a>
+                </nav>
+            </header>
+            <div class="main">
+                <main>
+                    <section class="description">
+                        <h1 class="title description__title">Статистика</h1>
+                        <div>В этом разделе вы можете ознакомиться со статистикой вашего изучения материалов сайта и выполненных тестов</div>
+                        <nav class="table-of-contents">
+                            <label class="links__toggle-button">
+                                <input class="links__toggle-button__checkbox" type="checkbox">
+                                <div class="links__toggle-button__title">Содержание</div>
+                            </label>
+                            <ul>
+                                <li><a href="#general">Раздел "Общая история"</a></li>
+                                <li><a href="#scientists">Раздел "Значимые личности"</a></li>
+                                <li><a href="#inventions">Раздел "Главные достижения"</a></li>
+                                <li><a href="#date">Раздел "В этот день..."</a></li>
+                                <li><a href="#tests">Результаты тестов</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section id="general">
+                        <h2 class="title">Раздел "Общая история"</h2>
+                        <div class="content">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Общий прогресс чтения раздела:</div>
+                                    <div class="progress__container">
+                                        <div id="general_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="general_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Прогресс прочтения первого этапа:</div>
+                                    <div class="progress__container">
+                                        <div id="general1_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="general1_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Прогресс прочтения второго этапа:</div>
+                                    <div class="progress__container">
+                                        <div id="general2_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="general2_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Прогресс прочтения третьего этапа:</div>
+                                    <div class="progress__container">
+                                        <div id="general3_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="general3_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Прогресс прочтения четвертого этапа:</div>
+                                    <div class="progress__container">
+                                        <div id="general4_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="general4_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Прогресс прочтения пятого этапа:</div>
+                                    <div class="progress__container">
+                                        <div id="general5_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="general5_text" class="desc__part__text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="scientists">
+                        <h2 class="title">Раздел "Значимые личности"</h2>
+                        <div class="content">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="progress__container">
+                                        <div id="scientists_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="scientists_text" class="desc__part__text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="inventions">
+                        <h2 class="title">Раздел "Главные достижения"</h2>
+                        <div class="content">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="progress__container">
+                                        <div id="inventions_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="inventions_text" class="desc__part__text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="date">
+                        <h2 class="title">Раздел "В этот день..."</h2>
+                        <div class="content">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="progress__container">
+                                        <div id="date_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="date_text" class="desc__part__text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="tests">
+                        <h2 class="title">Результаты тестов</h2>
+                        <div class="content">
+                            <div class="desc">
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Общий процент выполнения тестов:</div>
+                                    <div class="progress__container">
+                                        <div id="tests_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="tests_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Результат выполнения теста по первому этапу:</div>
+                                    <div class="progress__container">
+                                        <div id="tests1_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="tests1_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Результат выполнения теста по второму этапу:</div>
+                                    <div class="progress__container">
+                                        <div id="tests2_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="tests2_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Результат выполнения теста по третьему этапу:</div>
+                                    <div class="progress__container">
+                                        <div id="tests3_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="tests3_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Результат выполнения теста по четвертому этапу:</div>
+                                    <div class="progress__container">
+                                        <div id="tests4_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="tests4_text" class="desc__part__text"></div>
+                                </div>
+                                <div class="desc__part">
+                                    <div class="desc__part__title">🔸Результат выполнения теста по пятому этапу:</div>
+                                    <div class="progress__container">
+                                        <div id="tests5_bar" class="progress__bar"></div>
+                                    </div>
+                                    <div id="tests5_text" class="desc__part__text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <button class="button" onclick="resetProgress()">Сбросить прогресс</button>
+                    </section>
+                </main>
+            </div>
+            <div onclick="scrollUp()" id="goup"></div>
+            <footer class="footer">
+                <div class="credits">
+                    <div class="credits__info">
+                        Мини-проект по дисциплине<br>
+                        "История российской науки и техники"
+                        <div class="source__wrapper">
+                            <a href="https://github.com/marlef03/russian_computer_history" target="_blank" class="credits__source">Исходный код проекта</a>
+                        </div>
+                    </div>
+                    <div class="credits__authors">
+                        Работу выполнили:
+                        <div class="authors__1">
+                            Труханов Марк (frontend)
+                        </div>
+                        <div class="authors__2">
+                            Понкратов Игнат (backend, сбор информации)
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="/assets/scripts/util.js"></script>
+        <script src="/assets/scripts/fill_statistics.js"></script>
     </body>
 </html>
