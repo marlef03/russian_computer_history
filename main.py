@@ -53,7 +53,7 @@ async def main_handler(request: web.Request):
 
         image, text = utils.get_date(f'{now.strftime("%d")}-{now.strftime("%m")}')
 
-        real = str(text == '').lower()
+        real = str(text != '').lower()
 
         return aiohttp_jinja2.render_template('date.html', request, {
             'day': str(now.day),
