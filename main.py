@@ -52,6 +52,12 @@ async def main_handler(request: web.Request):
             'text': text
         })
 
+    if path == '/tests':
+        if 'chapter' in query:
+            return web.FileResponse(os.path.join(HTML_PATH, 'tests', f'{query["chapter"]}.html'))
+
+        return web.FileResponse(os.path.join(HTML_PATH, 'tests', f'table-of-contents.html'))
+
     file_path = os.path.join(HTML_PATH, f'{os.path.basename(path)}.html')
 
     if os.path.isfile(file_path):
