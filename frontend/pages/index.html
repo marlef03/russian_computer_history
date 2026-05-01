@@ -185,12 +185,16 @@
             const date = new Date();
             const months = [
                 'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 
-                'Августа', 'Сентября', 'Октября', 'Ноябрая', 'Декабря'
+                'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'
             ];
             const month = date.getMonth();
             const day = date.getDate();
-            document.querySelector('.date-scheme__number').textContent = day;
-            document.querySelector('.date-scheme__month').textContent = months[month];
+            const dayElement = document.querySelector('.date-scheme__number');
+            const monthElement = document.querySelector('.date-scheme__month');
+            dayElement.textContent = day;
+            monthElement.textContent = months[month];
+            dayElement.style.left = 48 + (1 - dayElement.offsetWidth / 100) * 40 + 'px';
+            monthElement.style.left = 78 + (1 - monthElement.offsetWidth / 100) * 30 + 'px';
         </script>
         <script src="/assets/scripts/util.js"></script>
     </body>
