@@ -38,7 +38,7 @@
                         <div class="link__icon inventions"></div>
                         <div class="link__text">Главные достижения</div>
                     </a>
-                    <a href="/date" class="links__card">
+                    <a id="date__top__link" href="/date" class="links__card">
                         <div class="link__icon date"></div>
                         <div class="link__text">В этот день...</div>
                     </a>
@@ -113,12 +113,12 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="/date" class="option__card">
+                            <a id="date__option__link" href="/date" class="option__card">
                                 <div class="option__title">...узнать, какое значимое событие в истории развития отечественной вычислительной техники произошло сегодня</div>
                                 <div class="option__date-scheme">
                                     <div class="date-scheme__calendar">
-                                        <div class="date-scheme__number"></div>
-                                        <div class="date-scheme__month"></div>
+                                        <div class="date-scheme__number">{{ day }}</div>
+                                        <div class="date-scheme__month">{{ month }}</div>
                                     </div>
                                     <div class="date-scheme__question"></div>
                                 </div>
@@ -182,17 +182,8 @@
             </footer>
         </div>
         <script>
-            const date = new Date();
-            const months = [
-                'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 
-                'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'
-            ];
-            const month = date.getMonth();
-            const day = date.getDate();
             const dayElement = document.querySelector('.date-scheme__number');
             const monthElement = document.querySelector('.date-scheme__month');
-            dayElement.textContent = day;
-            monthElement.textContent = months[month];
             dayElement.style.left = 48 + (1 - dayElement.offsetWidth / 100) * 40 + 'px';
             monthElement.style.left = 78 + (1 - monthElement.offsetWidth / 100) * 30 + 'px';
         </script>
