@@ -23,6 +23,12 @@ async def main_handler(request: web.Request):
     if path == '/':
         return web.FileResponse(os.path.join(HTML_PATH, 'index.html'))
 
+    if path == '/general':
+        if 'chapter' in query:
+            return web.FileResponse(os.path.join(HTML_PATH, 'general', f'{query["chapter"]}.html'))
+
+        return web.FileResponse(os.path.join(HTML_PATH, 'general', f'table-of-contents.html'))
+
     if path == '/date':
         if 'date' in query:
             return web.Response(text='Date')
