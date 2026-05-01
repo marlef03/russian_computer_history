@@ -1,5 +1,7 @@
 from datetime import datetime
 
+from backend import utils
+
 import aiohttp_jinja2
 import jinja2
 import os
@@ -28,8 +30,8 @@ async def main_handler(request: web.Request):
         now = datetime.now()
 
         return aiohttp_jinja2.render_template('index.html', request, {
-            'day': now.strftime('%d'),
-            'month': now.strftime('%m')
+            'day': str(now.day),
+            'month': utils.get_month(now.month)
         })
 
     if path == '/general':
@@ -39,10 +41,16 @@ async def main_handler(request: web.Request):
         return web.FileResponse(os.path.join(HTML_PATH, 'general', f'table-of-contents.html'))
 
     if path == '/date':
-        if 'date' in query:
-            return web.Response(text='Date')
-        else:
-            raise web.HTTPNotFound()
+        now = datetime.now()
+
+        image, text = utils.get_date(f'{now.strftime("%d")}-{now.strftime("%m")}')
+
+        return aiohttp_jinja2.render_template('date.html', request, {
+            'day': str(now.day),
+            'month': utils.get_month(now.month),
+            'image': image,
+            'text': text
+        })
 
     file_path = os.path.join(HTML_PATH, f'{os.path.basename(path)}.html')
 
