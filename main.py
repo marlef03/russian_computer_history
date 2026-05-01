@@ -1,3 +1,7 @@
+from datetime import datetime
+
+import aiohttp_jinja2
+import jinja2
 import os
 
 from aiohttp import web
@@ -21,7 +25,12 @@ async def main_handler(request: web.Request):
         return web.Response(text='Wrong api request...')
 
     if path == '/':
-        return web.FileResponse(os.path.join(HTML_PATH, 'index.html'))
+        now = datetime.now()
+
+        return aiohttp_jinja2.render_template('index.html', request, {
+            'day': now.strftime('%d'),
+            'month': now.strftime('%m')
+        })
 
     if path == '/general':
         if 'chapter' in query:
@@ -58,5 +67,7 @@ app = web.Application(middlewares=[error_handler])
 app.router.add_static('/assets/', path=os.path.join(BASE_PATH, 'assets'), name='assets')
 
 app.router.add_route('*', '/{tail:.*}', main_handler)
+
+aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader(HTML_PATH))
 
 web.run_app(app, host='192.168.50.78', port=80)
