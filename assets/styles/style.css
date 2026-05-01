@@ -17,6 +17,12 @@
     --option-color: #363636;
     --button-color: #363636;
     --button-active-color: #444;
+    --border-selected-color: #ff660d;
+    --border-selected-hover-color: #fc853f;
+    --button-selected-color: #3b2f27;
+    --button-selected-hover-color: #47382e;
+    --field-color: #3F3F3F;
+    --result-scheme-width: 0;
     scroll-behavior: smooth;
 }
 
@@ -34,7 +40,7 @@ a {
     color: white;
 }
 
-input[type="checkbox"] {
+input:is([type="checkbox"], [type="radio"]) {
     all: unset;
     position: absolute;
 }
@@ -55,7 +61,7 @@ input[type="checkbox"] {
 }
 
 @media (hover: hover) {
-    .button:is(:hover, :focus, :focus-visible) {
+    .button:is(:hover, :focus, :focus-visible, :has(:is(:focus-visible))) {
         border-color: var(--border-active-color);
         background-color: var(--button-active-color);
         transition: 0.3s;
@@ -281,6 +287,13 @@ section {
     margin-bottom: 20px;
 }
 
+.semi-title {
+    font-weight: normal;
+    font-size: 26px;
+    text-align: center;
+    margin: 10px 0px;
+}
+
 .footer {
     border-top: 1px white solid;
     padding: 20px;
@@ -456,7 +469,10 @@ section {
 
     .title {
         font-size: 26px;
-        text-align: center;
+    }
+
+    .semi-title {
+        font-size: 20px;
     }
 }
 

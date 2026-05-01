@@ -11,6 +11,12 @@
         <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
         <link rel="stylesheet" href="/assets/styles/style.css">
         <link rel="stylesheet" href="/assets/styles/onepagecontent.css">
+        <style>
+            ul {
+                visibility: visible;
+                height: fit-content;
+            }
+        </style>
     </head>
     <body>
         <div class="root">
@@ -57,24 +63,16 @@
                     <section class="description">
                         <h1 class="title description__title">Общая история</h1>
                         <div>На этой странице приведён список хронологически упорядоченных разделов общей истории развития советской и российской вычислительной техники с их небольшим описанием. Вы можете приступить к изучению любого из них</div>
-                        <nav class="table-of-contents">
-                            <label class="links__toggle-button">
-                                <input class="links__toggle-button__checkbox" type="checkbox">
-                                <div class="links__toggle-button__title">Содержание</div>
-                            </label>
-                            <ul>
-                                <li><a href="#chapter-1">1. Начальный этап</a></li>
-                                <li><a href="#chapter-2">2. Следующий этап</a></li>
-                                <li><a href="#chapter-3">3. ...</a></li>
-                            </ul>
-                        </nav>
+                        
                     </section>
-                    <section id="chapter-1">
-                        <h2 class="title">1. Раздел 1</h2>
-                        <div class="content">
-                            <img class="image" src="/assets/images/inventions/" alt="МЭСМ">
-                            <div class="desc"></div>
-                        </div>
+                    <section>
+                        <ul>
+                            <li><a href="/general?chapter=1">Этап 1 (1950-е годы)</a></li>
+                            <li><a href="/general?chapter=2">Этап 2 (1960-е годы)</a></li>
+                            <li><a href="/general?chapter=3">Этап 3 (1970-е – 1980-е годы)</a></li>
+                            <li><a href="/general?chapter=4">Этап 4 (конец 1980-х – 1990-е)</a></li>
+                            <li><a href="/general?chapter=5">Этап 5 (2000-е – наши дни)</a></li>
+                        </ul>
                     </section>
                 </main>
             </div>

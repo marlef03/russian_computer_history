@@ -107,6 +107,10 @@ li {
     transition: border-color 0.3s;
 }
 
+li:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 449px) {
     li {
         font-size: 12px;
