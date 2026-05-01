@@ -53,11 +53,14 @@ async def main_handler(request: web.Request):
 
         image, text = utils.get_date(f'{now.strftime("%d")}-{now.strftime("%m")}')
 
+        real = str(text == '').lower()
+
         return aiohttp_jinja2.render_template('date.html', request, {
             'day': str(now.day),
             'month': utils.get_month(now.month),
             'image': image,
-            'text': text
+            'text': text,
+            'real': real
         })
 
     if path == '/tests':
