@@ -22,9 +22,17 @@ async def main_handler(request: web.Request):
 
         if stp_path.startswith('/testcheck'):
             if 'chapter' in query:
-                return web.Response(text='Test')
+                if request.can_read_body:
+                    try:
+                        data = await request.json()
 
-        return web.Response(text='Wrong api request...')
+                        result = utils.calculate_test(query['chapter'], data)
+
+                        return web.json_response({"result": result})
+                    except Exception as e:
+                        print(e)
+
+        return web.Response(text='Wrong api request...', status=400)
 
     if path == '/':
         now = datetime.now()
