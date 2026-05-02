@@ -22,7 +22,7 @@ def get_date(date: str) -> tuple[str, str]:
     if date in dates:
         return dates[date]['image'], dates[date]['text']
 
-    return random.choice(os.path.join(ASSETS_PATH, 'images', 'date')), ''
+    return os.path.basename(random.choice(os.path.join(ASSETS_PATH, 'images', 'date'))).split(".")[0], 'Сегодня не произошло что-то значительное...'
 
 def calculate_test(chapter: str, data: dict) -> float:
     result = 0
