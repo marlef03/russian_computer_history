@@ -1,12 +1,11 @@
 from datetime import datetime
-
 from backend import utils
+from aiohttp import web
 
 import aiohttp_jinja2
 import jinja2
 import os
 
-from aiohttp import web
 
 BASE_PATH = os.path.dirname(__file__)
 HTML_PATH = os.path.join(BASE_PATH, 'frontend', 'pages')
@@ -29,10 +28,10 @@ async def main_handler(request: web.Request):
                         result = utils.calculate_test(query['chapter'], data)
 
                         return web.json_response({"result": result})
-                    except Exception as e:
-                        print(e)
+                    except Exception as _:
+                        raise web.HTTPInternalServerError(text="Server error...")
 
-        return web.Response(text='Wrong api request...', status=400)
+        raise web.HTTPBadRequest(text="Wrong api request...")
 
     if path == '/':
         now = datetime.now()
@@ -83,8 +82,12 @@ async def error_handler(request, handler):
         response = await handler(request)
 
         return response
-    except web.HTTPException as _:
+    except web.HTTPNotFound as _:
         return web.FileResponse(os.path.join(HTML_PATH, 'filenotfound.html'))
+    except web.HTTPException as e:
+        return web.json_response({'error': e.text}) if request.path.startswith('/api') else e
+    except Exception as _:
+        return web.json_response({'error': 'Internal error...'}) if request.path.startswith('/api') else web.Response(text='Internal error...')
 
 
 app = web.Application(middlewares=[error_handler])
