@@ -10,6 +10,8 @@ import os
 BASE_PATH = os.path.dirname(__file__)
 HTML_PATH = os.path.join(BASE_PATH, 'frontend', 'pages')
 
+DEFAULT_DATE_TEXT = 'Сегодня не произошло ничего значительного...'
+
 
 async def main_handler(request: web.Request):
     path = request.path
@@ -50,9 +52,9 @@ async def main_handler(request: web.Request):
     if path == '/date':
         now = datetime.now()
 
-        image, text = utils.get_date(f'{now.strftime("%d")}-{now.strftime("%m")}')
+        image, text = utils.get_date(f'{now.strftime("%d")}-{now.strftime("%m")}', DEFAULT_DATE_TEXT)
 
-        real = str(text != 'Сегодня не произошло что-то значительное...').lower()
+        real = str(text != DEFAULT_DATE_TEXT).lower()
 
         return aiohttp_jinja2.render_template('date.html', request, {
             'day': str(now.day),
